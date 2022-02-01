@@ -1,8 +1,9 @@
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
+import 'dotenv/config';
 
-const portRunningServer = 3333;
+const portRunningServer = process.env.PORT || 3333;
 const appExpress    = express();
 const serverHttp    = http.createServer(appExpress);
 const ioSocket      = new Server(serverHttp);
